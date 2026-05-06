@@ -1,0 +1,103 @@
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container mt-4">
+                <div class="card shadow">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Presentación PPT NSNSMM</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="formVehiculo" name="formVehiculo" onsubmit="return false;" autocomplete="off">
+                            <input type="hidden" id="id_no_normalizada" name="id_no_normalizada">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="marca">Marca</label>
+                                    <input type="text" class="form-control" id="marca" name="marca"
+                                        placeholder="Ej. Nissan" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="modelo">Modelo</label>
+                                    <input type="text" class="form-control" id="modelo" name="modelo"
+                                        placeholder="Ej. Sentra" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="fecha">Año</label>
+                                    <input type="number" class="form-control" id="fecha" name="fecha" placeholder="2019"
+                                        required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="tipo_vehiculo">Tipo de Vehículo</label>
+                                    <select id="tipo_vehiculo" name="tipo_vehiculo" class="form-control">
+                                        <option selected>Seleccione un tipo</option>
+                                        <option value="1">Sedán</option>
+                                        <option value="2">Pick-up</option>
+                                        <option value="3">Moto</option>
+                                        <option value="4">Camioneta</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="tipo_gasolina">Tipo de Gasolina</label>
+                                    <select id="tipo_gasolina" name="tipo_gasolina" class="form-control">
+                                        <option value="" selected>Seleccione un tipo de gasolina</option>
+                                        <option value="1">Gasolina</option>
+                                        <option value="2">Diesel</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="tipo_transmision">Transmisión</label>
+                                    <select id="tipo_transmision" name="tipo_transmision" class="form-control">
+                                        <option selected>Seleccione una opción</option>
+                                        <option value="1">Estándar</option>
+                                        <option value="2">Automático</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="color">Color</label>
+                                    <input type="text" class="form-control" id="color" name="color" placeholder="Gris">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="numero_puertas">Número de Puertas</label>
+                                    <input type="number" class="form-control" id="numero_puertas" name="numero_puertas"
+                                        placeholder="4">
+                                </div>
+                            </div>
+
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary px-4" id="btn_guardar_vehiculo"
+                                    form="formVehiculo">
+                                    <i class="fas fa-save mr-1"></i> Guardar Registro
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered table-responsive table-dark" id="tabla_vehiculos">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Año</th>
+                        <th>Tipo de Vehiculo</th>
+                        <th>Gasolina</th>
+                        <th>Transmisión</th>
+                        <th>Color</th>
+                        <th>Puertas</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tb_vehiculos"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="app/controllers/crud.js"></script>
