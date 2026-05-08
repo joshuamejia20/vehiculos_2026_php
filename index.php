@@ -5,6 +5,7 @@
     setlocale(LC_TIME, 'spanish');
     
     require_once("conf.php");
+    session_start();
 
     if(isset($_GET["mod"])){
         $modulo = $_GET["mod"];

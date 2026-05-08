@@ -22,5 +22,9 @@ $conf['ricardinho']=array(
     'archivo'=>"presentacion.html",
     'layout'=>LAYOUT_DESKTOP
 );
+$conf['home']=array(
+    'archivo'=>"home.php",
+    'layout'=>LAYOUT_DESKTOP
+);
 
 ?>

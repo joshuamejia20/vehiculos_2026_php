@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION['ucad_user'])){
+  header('location: ?mod=login');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +36,8 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <button class="btn btn-danger">
-          <i class="fas fa-power-off"></i> Cerrar Sesión
+        <button class="btn btn-danger" id="btn_logout">
+          <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
         </button>
       </li>
 
@@ -56,7 +61,11 @@
           <img src="media/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Peter Parker</a>
+          <a href="#" class="d-block">
+            <?php
+              echo $_SESSION['ucad_user'];
+            ?>
+          </a>
         </div>
       </div>
 
@@ -133,7 +142,8 @@
 <script src="resources/chart.js/Chart.min.js"></script>
 
 <!-- AdminLTE for demo purposes -->
-<script src="resources/js/demo.js"></script>
+<!--<script src="resources/js/demo.js"></script>-->
+<script src="app/controllers/desktop.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--<script src="resources/js/pages/dashboard2.js"></script>-->
