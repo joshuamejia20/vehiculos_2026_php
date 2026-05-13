@@ -30,6 +30,10 @@
                     $_SESSION['ucad_id_usuario']=$items[0]['id_usuario'];
                     $_SESSION['ucad_nombre']=$items[0]['nombres'];
                     $_SESSION['ucad_apellidos']=$items[0]['apellidos'];
+
+                    $sql = "INSERT INTO bitacora(tabla_afectada, registro_afectado, fecha_accion, tipo_accion, id_usuario)
+                    VALUES('n/a', 0, NOW(), 1, $_SESSION[ucad_id_usuario])";
+                    $registro_sesion= mysqli_query($con, $sql);
                 }
 
                 $response = array(
