@@ -20,6 +20,9 @@ if(!isset($_SESSION['ucad_user'])){
   <link rel="stylesheet" href="resources/css/adminlte.min.css">
   <!-- jQuery -->
 <script src="resources/jquery/jquery.min.js"></script>
+<!--select2-->
+<link rel="stylesheet" href="resources/select2/css/select2.min.css">
+<link rel="stylesheet" href="resources/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -91,6 +94,14 @@ if(!isset($_SESSION['ucad_user'])){
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="?mod=marca" class="nav-link">
+              <i class="nav-icon fas fa-tag"></i>
+              <p>
+                Marca
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -145,6 +156,10 @@ if(!isset($_SESSION['ucad_user'])){
 <!--<script src="resources/js/demo.js"></script>-->
 <script src="app/controllers/desktop.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!--select2-->
+<script src="resources/select2/js/select2.full.min.js"></script>
+<script src="resources/select2/js/i18n/es.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--<script src="resources/js/pages/dashboard2.js"></script>-->
 </body>

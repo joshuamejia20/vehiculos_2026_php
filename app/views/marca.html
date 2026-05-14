@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Marcas y Select</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        
+                        <!-- Destino de Origen -->
+                        <div class="mb-3">
+                            <label class="form-label font-weight-bold">Marca normal</label>
+                            <select class="form-control" id="select_normal" name="select_normal" required>
+                                <option value="" selected disabled>Seleccione marca</option>
+                            </select>
+                        </div>
+
+                        <!-- Destino de Llegada -->
+                        <div class="mb-4">
+                            <label class="form-label font-weight-bold">Marca select2</label>
+                            <select class="form-control" id="select_nuevo" name="select_nuevo" required multiple>
+                            </select>
+                        </div>
+
+                        <!-- Botón de Acción -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-geo-alt"></i> Generar Marca
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    <small>Asegúrese de activar su GPS antes de marcar</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app/controllers/marca.js"></script>
