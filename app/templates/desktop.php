@@ -160,6 +160,13 @@ if(!isset($_SESSION['ucad_user'])){
 <!--select2-->
 <script src="resources/select2/js/select2.full.min.js"></script>
 <script src="resources/select2/js/i18n/es.js"></script>
+<!--datatables-->
+<link rel="stylesheet" href="resources/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="resources/datatables-responsive/css/responsive.bootstrap4.min.css">
+<script src="resources/datatables/jquery.dataTables.min.js"></script>
+<script src="resources/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="resources/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<!--<script src="resources/datatables/js/responsive.min.js"></script>-->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--<script src="resources/js/pages/dashboard2.js"></script>-->
 </body>

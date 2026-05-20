@@ -16,7 +16,7 @@ $(function () {
     });
 });
 
-function listar_vehiculos(){
+/*function listar_vehiculos(){
     $.ajax({
         url: "app/models/no_normalizada/listar.php",
         method: "POST",
@@ -64,7 +64,7 @@ function listar_vehiculos(){
                 icon: "info"
             });
     });
-}
+}*/
 
 function registrar_vehiculo(){
     $.ajax({
@@ -183,5 +183,95 @@ function eliminar_vehiculo(id){
                     });
             });
         }
+    });
+}
+
+function listar_vehiculos(){
+    if($.fn.DataTable.isDataTable("#tabla_vehiculos")){
+        $("#tabla_vehiculos").DataTable().clear();
+        $("#tabla_vehiculos").DataTable().destroy();
+    }
+
+    $("#tabla_vehiculos").DataTable({
+        destroy: true,
+        info: true,
+        filter: true,
+        lengthChange: false,
+        pageLength: 10,
+        responsive: true,
+        processing: true,
+        serverSide: true,
+        order: [[3, "asc"]],
+        ajax: {
+            url: "app/models/no_normalizada/mostrar.php",
+            method: "POST",
+            dataType: "json",
+        },
+        columns: [
+            {
+                data: "id_no_normalizada",
+                orderable: false,
+                serchable: false,
+            },
+            {
+                data: "marca",
+                orderable: true,
+                serchable: true,
+            },
+            {
+                data: "modelo",
+                orderable: true,
+                serchable: true,
+            },
+            {
+                data: "fecha",
+                orderable: true,
+                serchable: true,
+            },
+            {
+                data: "tipo_vehiculo",
+                orderable: true,
+                serchable: true,
+            },
+            {
+                data: "tipo_gasolina",
+                orderable: true,
+                serchable: true,
+                render: function (value, type, records, meta) {
+                    let tipo_gasolina = (value == "Gasolina") ? "<span class='badge badge-primary'>Gasolina</span>" : "<span class='badge badge-success'>Diésel</span>";
+                    return tipo_gasolina;
+                }
+            },
+            {
+                data: "tipo_transmision",
+                orderable: true,
+                serchable: true,
+            },
+            {
+                data: "color",
+                orderable: true,
+                serchable: true,
+            },
+            {
+                data: "numero_puertas",
+                orderable: true,
+                serchable: true,
+            },
+            {
+                data: "id_no_normalizada",
+                orderable: true,
+                serchable: true,
+                render: function (value, type, records, meta) {
+                    let botones =
+                        "<button class='btn btn-sm btn-info edit-car mr-1' data-id='"+ value +"'>"+
+                            "<i class='fas fa-edit'></i>"+
+                        "</button>"+
+                        "<button class='btn btn-sm btn-danger del-car mr-1' data-id='"+ value +"'>"+
+                            "<i class='fas fa-trash'></i>"+
+                        "</button>";
+                    return botones;
+                }
+            },
+        ]
     });
 }
