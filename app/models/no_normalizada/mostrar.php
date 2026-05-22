@@ -7,8 +7,8 @@ try {
 
     //variables para paginacion del datatable
     $params['limit'] = $params['length'];
-   // $params['order_column'] = $params['columns'][$params['order'][0]['column']]['data'];
-   $params['order_column'] = $params['order'][0]['column'];
+   $params['order_column'] = $params['columns'][$params['order'][0]['column']]['data'];
+   //$params['order_column'] = $params['order'][0]['column'];
     $params['order'] = $params['order'][0]['dir'];
     $params['query'] = ($params['search']['value'] != "") ? '%' . $params['search']['value'] . "%" : '%';
     $sql = "SELECT SQL_CALC_FOUND_ROWS * 
@@ -22,7 +22,7 @@ try {
             OR tipo_transmision LIKE '$params[query]'
             OR color LIKE '$params[query]'
             OR numero_puertas LIKE '$params[query]'
-            ORDER BY '$params[order_column]' '$params[order]'
+            ORDER BY $params[order_column] $params[order]
             LIMIT $params[start], $params[limit]";
             //print_r($sql);
     $resultado = mysqli_query($con, $sql);
