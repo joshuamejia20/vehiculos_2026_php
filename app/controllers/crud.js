@@ -14,6 +14,10 @@ $(function () {
         let id = $(this).data("id");
         eliminar_vehiculo(id);
     });
+    $("#tabla_vehiculos").on("click", ".email-car", function () {
+        let id = $(this).data("id");
+        enviar_email(id);
+    });
 
     $("#btn_generar_reporte").click(function () { 
         crear_pdf();
@@ -272,6 +276,9 @@ function listar_vehiculos(){
                         "</button>"+
                         "<button class='btn btn-sm btn-danger del-car mr-1' data-id='"+ value +"'>"+
                             "<i class='fas fa-trash'></i>"+
+                        "</button>"+
+                        "<button class='btn btn-sm btn-danger email-car mr-1' data-id='"+ value +"'>"+
+                            "<i class='fas fa-envelope'></i>"+
                         "</button>";
                     return botones;
                 }
@@ -289,6 +296,37 @@ function crear_pdf(){
     }).done(function (response) {
         if(response.success){
             window.open(response.url, "_blank");
+        }else{
+            Swal.fire({
+                title: "¡Atención!",
+                text: response.error,
+                icon: "info"
+            });
+        }
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        Swal.fire({
+                title: "¡Atención!",
+                text: `Ocurrió un error al conectar con el servidor: ${textStatus}`,
+                icon: "info"
+            });
+    });
+}
+
+function enviar_email(id){
+    $.ajax({
+        url: "app/models/no_normalizada/correo.php",
+        method: "POST",
+        data: {
+            id_no_normalizada: id 
+        },
+        dataType: "json",
+    }).done(function (response) {
+        if(response.success){
+            Swal.fire({
+                title: "¡Éxito!",
+                text: response.msg,
+                icon: "success"
+            });
         }else{
             Swal.fire({
                 title: "¡Atención!",
