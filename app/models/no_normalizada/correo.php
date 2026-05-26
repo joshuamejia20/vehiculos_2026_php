@@ -37,7 +37,7 @@
                 $mail->Host='smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'josue.mejia@ucad.edu.sv';
-                $mail->Password = 'aquivalaclave';
+                $mail->Password = 'aqui va la clave';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
                 $mail->CharSet = 'UTF-8';
@@ -49,6 +49,8 @@
                 $mail->addCC('pl22034@ucad.edu.sv', 'Esdras Mate');
                 $mail->addBCC('mr21181@ucad.edu.sv', 'Josué  Callejas');
                 $mail->addBCC('pc22114@ucad.edu.sv', 'Ricardinho ppt');
+
+                $mail->addAttachment(_URL_SYSTEM_."media/docs/pdf_prueba.pdf", "notas_ucad.pdf");
 
                 $mail->isHTML(true);
                 $mail->Subject = 'Información del vehiculo ' .$vehiculo['marca']. ' '. $vehiculo['modelo'];
