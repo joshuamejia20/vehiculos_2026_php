@@ -26,6 +26,10 @@ $conf['marca']=array(
     'archivo'=>"marca.html",
     'layout'=>LAYOUT_DESKTOP
 );
+$conf['graficas']=array(
+    'archivo'=>"graficas.html",
+    'layout'=>LAYOUT_DESKTOP
+);
 $conf['home']=array(
     'archivo'=>"home.php",
     'layout'=>LAYOUT_DESKTOP

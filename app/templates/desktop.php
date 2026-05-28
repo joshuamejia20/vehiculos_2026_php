@@ -23,6 +23,7 @@ if(!isset($_SESSION['ucad_user'])){
 <!--select2-->
 <link rel="stylesheet" href="resources/select2/css/select2.min.css">
 <link rel="stylesheet" href="resources/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<script src="resources/js/loader.js"></script>
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -99,6 +100,14 @@ if(!isset($_SESSION['ucad_user'])){
               <i class="nav-icon fas fa-tag"></i>
               <p>
                 Marca
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="?mod=graficas" class="nav-link">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p>
+                Graficas
               </p>
             </a>
           </li>
